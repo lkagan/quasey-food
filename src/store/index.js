@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import solutionFoods from './Solution/store-foods'
+// import solutionFoods from './Solution/store-foods'
+import storeFoods from './Foods/store-foods';
 
 Vue.use(Vuex)
 
@@ -13,13 +14,14 @@ Vue.use(Vuex)
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      solutionFoods
+      // solutionFoods,
+      storeFoods
     },
 
     // enable strict mode (adds overhead!)
     // for dev mode only
     strict: process.env.DEV
-  })
+  });
 
   return Store
 }
