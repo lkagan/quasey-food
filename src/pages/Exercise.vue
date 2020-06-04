@@ -42,7 +42,7 @@
 
     computed: {
       foods() {
-        return this.$store.state.storeFoods.foods;
+        return this.$store.getters.foods;
       }
     },
 
