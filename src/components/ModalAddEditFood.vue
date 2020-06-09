@@ -62,7 +62,7 @@
                     label="Save"
                     color="primary"
                     type="submit"
-                    v-close-popup="closePopup"
+                    v-close-popup
                     />
             </q-card-actions>
 
@@ -81,7 +81,6 @@
                     rating: 1,
                     imageUrl: ''
                 },
-                closePopup: false,
             }
         },
 
@@ -101,9 +100,12 @@
             submitForm() {
                 this.$refs.foodForm.validate()
                     .then(success => {
-                        if (success) {
-                            this.closePopup = true;
-                            console.log('success');
+                        if (! success) {
+                            return;
+                        }
+
+                        if (this.type === 'add') {
+                            this.$store.dispatch('addFood', this.foodToSubmit);
                         }
                     });
             }

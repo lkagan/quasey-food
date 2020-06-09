@@ -12,6 +12,7 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "quasar": "^1.0.0-beta.0",
+    "uuid": "^8.1.0",
     "vuex": "^3.4.0"
   },
   "devDependencies": {

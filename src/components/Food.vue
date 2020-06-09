@@ -2,7 +2,7 @@
     <q-card
         class="card">
         <q-img
-            :src="food.imageUrl"
+            :src="food.imageUrl || '/statics/image-placeholder.png'"
             basic
             contain
         >
@@ -22,7 +22,7 @@
         </q-card-section>
 
         <q-card-section>
-            {{ food.description }}
+            {{ food.description || 'no description provided' }}
         </q-card-section>
 
         <q-card-actions

@@ -1,5 +1,7 @@
 import Vuex from 'vuex';
 
+import { v4 as uuid } from 'uuid';
+
 export default {
     state: {
         foods: [
@@ -40,12 +42,20 @@ export default {
         deleteFood(state, id) {
             const index = state.foods.findIndex(food => food.id === id);
             state.foods.splice(index, 1);
+        },
+
+        addFood(state, food) {
+            state.foods.push(food);
         }
     },
 
     actions: {
         deleteFood({commit}, id) {
             commit("deleteFood", id);
+        },
+
+        addFood({commit}, food) {
+            commit('addFood', {...food, id: uuid()});
         }
     }
 };
