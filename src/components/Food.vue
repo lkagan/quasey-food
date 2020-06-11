@@ -37,14 +37,14 @@
             <q-btn
                 icon="delete"
                 color="red"
-                @click="deleteFood(food)"
+                @click="deleteFood"
                 flat>Delete
             </q-btn>
         </q-card-actions>
 
         <q-dialog
             v-model="showEditFoodModal">
-            <modal-add-edit-food type="edit"/>
+            <modal-add-edit-food type="edit" :food="food"/>
         </q-dialog>
     </q-card>
 </template>
@@ -64,14 +64,14 @@
         },
 
         methods: {
-            deleteFood(food) {
+            deleteFood() {
                 this.$q.dialog({
                     title: 'Confirm',
-                    message: `Are you sure you want to delete ${food.name}?`,
+                    message: `Are you sure you want to delete ${this.food.name}?`,
                     cancel: true,
                     persistent: true
                 }).onOk(() => {
-                    this.$store.dispatch('deleteFood', food.id);
+                    this.$store.dispatch('deleteFood', this.food.id);
                 });
             },
         }

@@ -46,6 +46,11 @@ export default {
 
         addFood(state, food) {
             state.foods.push(food);
+        },
+
+        editFood(state, food) {
+            const index = state.foods.findIndex(existing => food.id === existing.id);
+            state.foods.splice(index, 1, food);
         }
     },
 
@@ -56,6 +61,10 @@ export default {
 
         addFood({commit}, food) {
             commit('addFood', {...food, id: uuid()});
+        },
+
+        editFood({commit}, food) {
+            commit('editFood', food);
         }
     }
 };

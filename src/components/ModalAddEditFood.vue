@@ -72,10 +72,21 @@
 
 <script>
     export default {
-        props: ['type'],
+        props: {
+            type: {
+                required: true,
+                type: String,
+            },
+
+            food: {
+                required: false,
+                type: Object,
+            }
+        },
         data() {
             return {
                 foodToSubmit: {
+                    id: null,
                     name: '',
                     description: '',
                     rating: 1,
@@ -106,8 +117,16 @@
 
                         if (this.type === 'add') {
                             this.$store.dispatch('addFood', this.foodToSubmit);
+                        } else if (this.type === 'edit') {
+                            this.$store.dispatch('editFood', this.foodToSubmit);
                         }
                     });
+            }
+        },
+
+        mounted() {
+            if (this.type === 'edit') {
+                Object.assign(this.foodToSubmit, this.food);
             }
         }
     }
