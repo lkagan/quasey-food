@@ -2,7 +2,7 @@
   "name": "awesome-exercise-3",
   "version": "0.0.1",
   "description": "A Quasar Framework app",
-  "productName": "Awesome Exercise 3",
+  "productName": "Quasey Food",
   "cordovaId": "org.cordova.quasar.app",
   "author": "Danny Connell <sendstufftodanny@gmail.com>",
   "private": true,
