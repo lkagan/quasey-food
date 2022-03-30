@@ -13,10 +13,9 @@
         </q-btn>
 
         <q-toolbar-title>
-          Awesome Exercise 3
+          Quasey Food
         </q-toolbar-title>
 
-        <div>Vuex & Forms</div>
       </q-toolbar>
     </q-header>
 
@@ -33,14 +32,6 @@
           </q-item-section>
           <q-item-section>
             <q-item-label>Exercise</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable to="/solution" exact>
-          <q-item-section avatar>
-            <q-icon name="help" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Solution</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
